@@ -255,6 +255,12 @@ int main( void ) {
 
 <section class="related">
 
+* * *
+
+## See Also
+
+-   <span class="package-name">[`@stdlib/math-base/special/cinv`][@stdlib/math/base/special/cinv]</span><span class="delimiter">: </span><span class="description">compute the inverse of a double-precision complex floating-point number.</span>
+
 </section>
 
 <!-- /.related -->
@@ -340,6 +346,8 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 [@baudin:2012a]: https://arxiv.org/abs/1210.4539
 
 <!-- <related-links> -->
+
+[@stdlib/math/base/special/cinv]: https://github.com/stdlib-js/math-base-special-cinv
 
 <!-- </related-links> -->
 
