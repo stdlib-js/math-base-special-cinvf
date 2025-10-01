@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,22 +16,17 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MODULES //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
 
-var Complex64 = require( '@stdlib/complex-float32-ctor' );
-var addon = require( './../src/addon.node' );
-
-
-// MAIN //
+import { Complex64 } from '@stdlib/types/complex';
 
 /**
 * Computes the inverse of a single-precision complex floating-point number.
 *
-* @private
-* @param {Complex64} z - complex number
-* @returns {Complex64} result
+* @param z - input value
+* @returns result
 *
 * @example
 * var Complex64 = require( '@stdlib/complex-float32-ctor' );
@@ -47,12 +42,9 @@ var addon = require( './../src/addon.node' );
 * var im = imagf( v );
 * // returns ~-0.2
 */
-function cinvf( z ) {
-	var v = addon( z );
-	return new Complex64( v.re, v.im );
-}
+declare function cinvf( z: Complex64 ): Complex64;
 
 
 // EXPORTS //
 
-module.exports = cinvf;
+export = cinvf;
