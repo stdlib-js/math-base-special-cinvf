@@ -51,38 +51,32 @@ The inverse (or reciprocal) of a non-zero complex number `z = a + bi` is defined
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-base-special-cinvf
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-cinvf = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cinvf@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var cinvf = require( 'path/to/vendor/umd/math-base-special-cinvf/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cinvf@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.cinvf;
-})();
-</script>
+var cinvf = require( '@stdlib/math-base-special-cinvf' );
 ```
 
 #### cinvf( z )
@@ -106,27 +100,17 @@ var v = cinvf( new Complex64( 2.0, 4.0 ) );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-complex64@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-array-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cinvf@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var Complex64Array = require( '@stdlib/array-complex64' );
+var uniform = require( '@stdlib/random-array-uniform' );
+var logEachMap = require( '@stdlib/console-log-each-map' );
+var cinvf = require( '@stdlib/math-base-special-cinvf' );
 
 // Create an array of random numbers:
 var arr = new Complex64Array( uniform( 200, -100.0, 100.0 ) );
 
 // Compute the inverse of each number in the array:
 logEachMap( '1.0 / (%s) = %s', arr, cinvf );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -135,7 +119,114 @@ logEachMap( '1.0 / (%s) = %s', arr, cinvf );
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/math/base/special/cinvf.h"
+```
+
+#### stdlib_base_cinvf( z )
+
+Computes the inverse of a single-precision complex floating-point number.
+
+```c
+#include "stdlib/complex/float32/ctor.h"
+#include "stdlib/complex/float32/real.h"
+#include "stdlib/complex/float32/imag.h"
+
+stdlib_complex64_t z = stdlib_complex64( 2.0f, 4.0f );
+
+stdlib_complex64_t out = stdlib_base_cinvf( z );
+
+float re = stdlib_complex64_real( out );
+// returns 0.1f
+
+float im = stdlib_complex64_imag( out );
+// returns -0.2f
+```
+
+The function accepts the following arguments:
+
+-   **z**: `[in] stdlib_complex64_t` input value.
+
+```c
+stdlib_complex64_t stdlib_base_cinvf( const stdlib_complex64_t z );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/math/base/special/cinvf.h"
+#include "stdlib/complex/float32/ctor.h"
+#include "stdlib/complex/float32/reim.h"
+#include <stdio.h>
+
+int main( void ) {
+    const stdlib_complex64_t x[] = {
+        stdlib_complex64( 3.14f, 1.5f ),
+        stdlib_complex64( -3.14f, -1.5f ),
+        stdlib_complex64( 0.0f, 0.0f ),
+        stdlib_complex64( 0.0f/0.0f, 0.0f/0.0f )
+    };
+
+    stdlib_complex64_t v;
+    stdlib_complex64_t y;
+    float re1;
+    float im1;
+    float re2;
+    float im2;
+    int i;
+    for ( i = 0; i < 4; i++ ) {
+        v = x[ i ];
+        y = stdlib_base_cinvf( v );
+        stdlib_complex64_reim( v, &re1, &im1 );
+        stdlib_complex64_reim( y, &re2, &im2 );
+        printf( "cinvf(%f + %fi) = %f + %fi\n", re1, im1, re2, im2 );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 * * *
 
@@ -192,7 +283,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
@@ -205,8 +296,8 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/math-base-special-cinvf.svg
 [npm-url]: https://npmjs.org/package/@stdlib/math-base-special-cinvf
 
-[test-image]: https://github.com/stdlib-js/math-base-special-cinvf/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/math-base-special-cinvf/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/math-base-special-cinvf/actions/workflows/test.yml/badge.svg?branch=v0.1.0
+[test-url]: https://github.com/stdlib-js/math-base-special-cinvf/actions/workflows/test.yml?query=branch:v0.1.0
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/math-base-special-cinvf/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/math-base-special-cinvf?branch=main
@@ -218,8 +309,8 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 -->
 
-[chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
-[chat-url]: https://app.gitter.im/#/room/#stdlib-js_stdlib:gitter.im
+[chat-image]: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
+[chat-url]: https://stdlib.zulipchat.com
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 
@@ -248,7 +339,7 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/math/base/special/cinv]: https://github.com/stdlib-js/math-base-special-cinv/tree/umd
+[@stdlib/math/base/special/cinv]: https://github.com/stdlib-js/math-base-special-cinv
 
 <!-- </related-links> -->
 
