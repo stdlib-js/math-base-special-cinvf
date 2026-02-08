@@ -58,6 +58,11 @@ The inverse (or reciprocal) of a non-zero complex number `z = a + bi` is defined
 ## Usage
 
 ```javascript
+import cinvf from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cinvf@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-base-special-cinvf/tags). For example,
+
+```javascript
 import cinvf from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cinvf@v0.1.1-deno/mod.js';
 ```
 
@@ -86,7 +91,7 @@ var v = cinvf( new Complex64( 2.0, 4.0 ) );
 import Complex64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex64@deno/mod.js';
 import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-uniform@deno/mod.js';
 import logEachMap from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@deno/mod.js';
-import cinvf from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cinvf@v0.1.1-deno/mod.js';
+import cinvf from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cinvf@deno/mod.js';
 
 // Create an array of random numbers:
 var arr = new Complex64Array( uniform( 200, -100.0, 100.0 ) );
