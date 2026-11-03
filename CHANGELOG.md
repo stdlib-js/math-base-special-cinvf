@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-11-01)
+## Unreleased (2026-11-03)
 
 <section class="features">
 
@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`136f68b`](https://github.com/stdlib-js/stdlib/commit/136f68b4d9d45706c7ea0183b5990203a7e0a3b8) - **docs:** update Markdown equation elements _(by stdlib-bot)_
 -   [`98e34a7`](https://github.com/stdlib-js/stdlib/commit/98e34a782b2318a2941c26ac1838f7213e59844a) - **docs:** update Markdown equation elements [(#16411)](https://github.com/stdlib-js/stdlib/pull/16411) _(by stdlib-bot)_
 -   [`8729960`](https://github.com/stdlib-js/stdlib/commit/87299609e3a2c734cce1945b6828d4c6829272f0) - **feat:** add `assign` and `strided` methods to `math/base/special/cinvf` [(#16044)](https://github.com/stdlib-js/stdlib/pull/16044) _(by Karan Anand)_
 -   [`799c2f0`](https://github.com/stdlib-js/stdlib/commit/799c2f089b03f3237efc8d65e0e39dd1b71592c8) - **test:** migrate `math/base/special/cinvf` to ULP-based assertion [(#14377)](https://github.com/stdlib-js/stdlib/pull/14377) _(by Arjan-P)_
