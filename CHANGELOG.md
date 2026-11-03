@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`d0d8e26`](https://github.com/stdlib-js/stdlib/commit/d0d8e26ce806b50d11397f4bf75269b6b4adee66) - **chore:** clean-up [(#16436)](https://github.com/stdlib-js/stdlib/pull/16436) _(by Philipp Burckhardt, Athan Reines)_
 -   [`136f68b`](https://github.com/stdlib-js/stdlib/commit/136f68b4d9d45706c7ea0183b5990203a7e0a3b8) - **docs:** update Markdown equation elements _(by stdlib-bot)_
 -   [`98e34a7`](https://github.com/stdlib-js/stdlib/commit/98e34a782b2318a2941c26ac1838f7213e59844a) - **docs:** update Markdown equation elements [(#16411)](https://github.com/stdlib-js/stdlib/pull/16411) _(by stdlib-bot)_
 -   [`8729960`](https://github.com/stdlib-js/stdlib/commit/87299609e3a2c734cce1945b6828d4c6829272f0) - **feat:** add `assign` and `strided` methods to `math/base/special/cinvf` [(#16044)](https://github.com/stdlib-js/stdlib/pull/16044) _(by Karan Anand)_
@@ -38,10 +39,12 @@
 
 ### Contributors
 
-A total of 2 people contributed to this release. Thank you to the following contributors:
+A total of 4 people contributed to this release. Thank you to the following contributors:
 
 -   Arjan-P
+-   Athan Reines
 -   Karan Anand
+-   Philipp Burckhardt
 
 </section>
 
